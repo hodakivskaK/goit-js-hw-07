@@ -6,12 +6,6 @@ console.log(galleryItems);
 
 const galleryListEl = document.querySelector(".gallery");
 
-
-
-
-
-
-
 // #1
 const galleryCard = createGalleryMarkup(galleryItems);
 galleryListEl.insertAdjacentHTML("beforeend", galleryCard);
@@ -31,7 +25,6 @@ function createGalleryMarkup(items) {
     }).join('');
 
 }
-
 
 
  galleryListEl.addEventListener("click", showElement)
