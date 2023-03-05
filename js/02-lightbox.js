@@ -6,13 +6,13 @@ console.log(galleryItems);
 
 const galleryListEl = document.querySelector(".gallery");
 
-// #1
+
 const galleryCard = createGalleryMarkup(galleryItems);
 galleryListEl.insertAdjacentHTML("beforeend", galleryCard);
 
 function createGalleryMarkup(items) {
-    return  items.map(({ preview, original, description }) => {
-        return `<div class="gallery__item">
+  return items.map(({ preview, original, description }) => {
+    return `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
@@ -22,17 +22,12 @@ function createGalleryMarkup(items) {
     />
   </a>
 </div>`;
-    }).join('');
+  }).join('');
 
 }
+new SimpleLightbox('.gallery__link', {
+  captionsData: "alt",
+  captionsDelay: 250,
+});
 
 
- galleryListEl.addEventListener("click", showElement)
-function showElement(ent) {
-    ent.preventDefault();
-  
-    new SimpleLightbox('.gallery a', {
-        captionsData: "alt",
-        captionsDelay: 250,
-    });
-}
